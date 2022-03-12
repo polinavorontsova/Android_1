@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    android:label="Navigation Graph"
+    app:startDestination="@id/blankFragment2">
+
+    <fragment
+        android:id="@+id/blankFragment2"
+        android:name="com.example.feedthenyusha.SignInFragment"
+        android:label="Sign-In using Google"
+        tools:layout="@layout/fragment_sign_in" />
+</navigation>

@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Feed the Nyusha</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="who_are_you">Who are you?</string>
+    <string name="sign_in_avatar_text">Sign-In avatar</string>
 </resources>
