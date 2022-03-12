@@ -2,13 +2,18 @@ package com.example.feedthenyusha
 
 import android.graphics.drawable.TransitionDrawable
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.content.res.AppCompatResources
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.NavController
+import androidx.navigation.findNavController
 import androidx.navigation.fragment.NavHostFragment
+import androidx.navigation.fragment.findNavController
 import androidx.navigation.ui.setupActionBarWithNavController
 import com.example.feedthenyusha.databinding.ActivityMainBinding
+import com.example.feedthenyusha.game.GameFragmentDirections
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
@@ -21,15 +26,13 @@ class MainActivity : AppCompatActivity() {
         val binding = ActivityMainBinding.inflate(layoutInflater)
         showSplashIfNecessary(binding, savedInstanceState)
 
-        val navHostFragment = supportFragmentManager
-            .findFragmentById(R.id.nav_host_fragment) as NavHostFragment
+        val navHostFragment =
+            supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as NavHostFragment
         navController = navHostFragment.navController
         setupActionBarWithNavController(navController)
     }
 
-    override fun onSupportNavigateUp(): Boolean {
-        return navController.navigateUp() || super.onSupportNavigateUp()
-    }
+    override fun onSupportNavigateUp() = navController.navigateUp() || super.onSupportNavigateUp()
 
     private fun showSplashIfNecessary(binding: ActivityMainBinding, savedInstanceState: Bundle?) {
         if (savedInstanceState == null) {

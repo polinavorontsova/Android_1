@@ -4,4 +4,14 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="who_are_you">Who are you?</string>
     <string name="sign_in_avatar_text">Sign-In avatar</string>
+    <string name="feed_cad">Feed Cad</string>
+    <string name="feed">FEED</string>
+    <string name="satiety_text">Satiety: %d</string>
+    <string name="share">Share</string>
+    <string name="feed_me_text">Feed me!</string>
+    <string name="developed_by_polina_951005_first_lab">Developed by Polina, 951005. First Lab</string>
+    <string name="developer">Developer</string>
+    <string name="sign_out">Sign Out</string>
+    <string name="save_success_text">Saved successfully</string>
+    <string name="save">Save</string>
 </resources>
