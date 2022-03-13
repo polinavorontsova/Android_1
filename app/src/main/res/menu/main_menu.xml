@@ -22,4 +22,10 @@
         android:title="@string/save"
         app:showAsAction="ifRoom" />
 
+    <item
+        android:id="@+id/results"
+        android:icon="@drawable/ic_results_table"
+        android:orderInCategory="4"
+        android:title="@string/results"
+        app:showAsAction="ifRoom" />
 </menu>

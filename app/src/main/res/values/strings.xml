@@ -14,4 +14,5 @@
     <string name="sign_out">Sign Out</string>
     <string name="save_success_text">Saved successfully</string>
     <string name="save">Save</string>
+    <string name="results">Results</string>
 </resources>

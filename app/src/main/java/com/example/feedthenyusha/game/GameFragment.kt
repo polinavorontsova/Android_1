@@ -81,6 +81,8 @@ class GameFragment : Fragment() {
                 .navigate(GameFragmentDirections.actionGameFragmentToAboutDeveloperFragment())
             R.id.sign_out -> userProfileViewModel.resetUser(binding.root.context)
             R.id.save -> saveResult()
+            R.id.results -> findNavController()
+                .navigate(GameFragmentDirections.actionGameFragmentToFeedResultsFragment())
         }
         return true
     }

@@ -23,10 +23,22 @@
             app:exitAnim="@android:anim/fade_out"
             app:popEnterAnim="@android:anim/fade_in"
             app:popExitAnim="@android:anim/slide_out_right" />
+        <action
+            android:id="@+id/action_gameFragment_to_feedResultsFragment"
+            app:destination="@id/feedResultsFragment"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/fade_out"
+            app:popEnterAnim="@android:anim/fade_in"
+            app:popExitAnim="@android:anim/slide_out_right" />
     </fragment>
     <fragment
         android:id="@+id/aboutDeveloperFragment"
-        android:name="com.example.feedthenyusha.AboutDeveloperFragment"
+        android:name="com.example.feedthenyusha.about.developer.AboutDeveloperFragment"
         android:label="Developer"
         tools:layout="@layout/about_developer_fragment" />
+    <fragment
+        android:id="@+id/feedResultsFragment"
+        android:name="com.example.feedthenyusha.results.FeedResultsFragment"
+        android:label="Feed Results"
+        tools:layout="@layout/feed_results_fragment_list" />
 </navigation>
