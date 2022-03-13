@@ -8,6 +8,8 @@
     android:layout_height="match_parent"
     android:layout_marginLeft="16dp"
     android:layout_marginRight="16dp"
+    android:textAlignment="center"
+    app:flow_horizontalAlign="end"
     app:layoutManager="LinearLayoutManager"
     tools:context=".results.FeedResultsFragment"
     tools:listitem="@layout/feed_results_fragment" />

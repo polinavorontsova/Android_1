@@ -11,9 +11,9 @@ import androidx.annotation.RequiresApi
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
+import androidx.lifecycle.coroutineScope
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.NavOptions
-import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
 import com.example.feedthenyusha.FeedTheCatApplication
 import com.example.feedthenyusha.R
@@ -38,7 +38,6 @@ class GameFragment : Fragment() {
     private val viewModel: GameViewModel by activityViewModels {
         GameViewModelFactory(
             (activity?.application as FeedTheCatApplication).database.dao(),
-            userProfileViewModel.user
         )
     }
 
@@ -67,6 +66,11 @@ class GameFragment : Fragment() {
         binding.feedButton.setOnClickListener { viewModel.updateSatiety() }
         binding.fab.setOnClickListener { shareResults() }
         viewModel.satiety.observe(viewLifecycleOwner) { animateCatIfNecessary(it) }
+        lifecycle.coroutineScope.launch {
+            userProfileViewModel.user.value?.displayName?.let {
+                viewModel.loadResults(it)
+            }
+        }
     }
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {

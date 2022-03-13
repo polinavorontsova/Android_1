@@ -11,7 +11,7 @@
     <item
         android:id="@+id/sign_out"
         android:icon="@drawable/ic_sign_out"
-        android:orderInCategory="3"
+        android:orderInCategory="4"
         android:title="@string/sign_out"
         app:showAsAction="ifRoom" />
 
@@ -25,7 +25,7 @@
     <item
         android:id="@+id/results"
         android:icon="@drawable/ic_results_table"
-        android:orderInCategory="4"
+        android:orderInCategory="3"
         android:title="@string/results"
         app:showAsAction="ifRoom" />
 </menu>

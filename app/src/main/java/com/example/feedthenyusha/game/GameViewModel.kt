@@ -6,27 +6,21 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.feedthenyusha.database.dao.FeedResultDao
 import com.example.feedthenyusha.database.model.FeedResult
-import com.google.android.gms.auth.api.signin.GoogleSignInAccount
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
 
 class GameViewModel(
     private val dao: FeedResultDao,
-    private val user: LiveData<GoogleSignInAccount?>
 ) : ViewModel() {
     private val _satiety: MutableLiveData<Int> by lazy {
-        MutableLiveData(0).also {
-            fetchResults()
-        }
+        MutableLiveData(0)
     }
 
-    private fun fetchResults() {
-        user.value?.displayName?.let {
-            viewModelScope.launch {
-                dao.getLastResultByPlayerName(it).collect {
-                    _satiety.value = it.satiety
-                }
+    fun loadResults(playerName: String) {
+        viewModelScope.launch {
+            dao.getLastResultByPlayerName(playerName).collect {
+                _satiety.value = it?.satiety ?: 0
             }
         }
     }
