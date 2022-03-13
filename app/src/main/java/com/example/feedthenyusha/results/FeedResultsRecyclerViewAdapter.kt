@@ -13,9 +13,10 @@ import java.time.ZoneId
 import java.time.format.DateTimeFormatter
 import java.time.format.FormatStyle
 
-class FeedResultsRecyclerViewAdapter(
-    private val values: List<FeedResult>
-) : RecyclerView.Adapter<FeedResultsRecyclerViewAdapter.ViewHolder>() {
+class FeedResultsRecyclerViewAdapter :
+    RecyclerView.Adapter<FeedResultsRecyclerViewAdapter.ViewHolder>() {
+
+    private val values = ArrayList<FeedResult>()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         return ViewHolder(
@@ -38,10 +39,14 @@ class FeedResultsRecyclerViewAdapter(
 
     override fun getItemCount() = values.size
 
+    fun fillData(data: List<FeedResult>) {
+        values.addAll(data)
+        notifyDataSetChanged()
+    }
+
     inner class ViewHolder(binding: FeedResultsFragmentBinding) :
         RecyclerView.ViewHolder(binding.root) {
         val satiety: TextView = binding.satiety
         val time: TextView = binding.time
     }
-
 }
